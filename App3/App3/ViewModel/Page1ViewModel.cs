@@ -30,7 +30,7 @@ namespace App3.ViewModel
                 person.FirstName = "Cristiano ";
                 person.LastName = "Ronaldo" + i.ToString();
                 person.Address = i.ToString() + " Real Madrid";
-                person.ImageSourceProperty = "Ronaldo" + i.ToString() + ".jpeg";
+                person.ImageSourceProperty = "Ronaldo" + i.ToString() + ".jpg";
 
                 People.Add(person);
             }

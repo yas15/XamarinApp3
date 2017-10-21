@@ -5,19 +5,28 @@
 
     <StackLayout Padding="20">
 
-        <ListView ItemsSource="{Binding People}">
-
+        <ListView ItemsSource="{Binding People}" HasUnevenRows="True" ItemSelected="ListView_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
+                    <ViewCell>
+                        <ContentView>
+                            <StackLayout Padding="20">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding FirstName}" FontSize="20" FontAttributes="Bold" />
+                                    <Label Text="{Binding LastName}" FontSize="20" FontAttributes="Bold" />
+                                </StackLayout>
+                                
+                                <Label Text="{Binding Address}" FontSize="15" />
+                            </StackLayout>
 
-                    <ImageCell Text="{Binding Name}" TextColor="Black" DetailColor="Gray"
-                               Detail="{Binding Address}" ImageSource="{Binding ImageSourceProperty}"/>
-
+                        </ContentView>
+                    </ViewCell>
                 </DataTemplate>
-
             </ListView.ItemTemplate>
 
         </ListView>
+
+
     </StackLayout>
 
 </ContentPage>
