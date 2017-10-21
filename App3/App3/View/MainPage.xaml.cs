@@ -34,6 +34,9 @@ namespace App3.View
 
         private void Button_Clicked(object sender, EventArgs e)
         {
+            // Since we have set the MainPage property to a new NavigationPage, 
+            // we can now start to use NavigationPage methods on the object MainPage.
+            // Navigation.PushAsync(page) - asynchronously pushes a page onto the navigation stack.
             Navigation.PushAsync(new Page1());
         }
     }

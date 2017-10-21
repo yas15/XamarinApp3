@@ -5,12 +5,7 @@
 
     <StackLayout Padding="20">
 
-        <!--In the code behind, we have set the BindingContext Property of the view Page1 to a new instance of the Page1 ViewModel.
-        i.e. we have set the default datasource for all the objects in the Page1 View to the objects in the Page1ViewModel.-->
-        <!--Add a ListView control to the view Page1 -->
-        <!--Set the ItemsSource property of the ListView to bind to the object People in the BindingContext i.e. the Page1ViewModel-->
-        <!--Add the ItemSelected event to the ListView, let Visual Studio autogenerate the EventHandler 'ListView_ItemSelected' in the code behind-->
-        <ListView ItemsSource="{Binding People}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True" >
+        <ListView ItemsSource="{Binding People}">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
