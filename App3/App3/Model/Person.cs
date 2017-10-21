@@ -9,6 +9,6 @@ namespace App3.Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
-        public string ImageSourceProperty { get; set; }
+        public decimal Age{ get; set; }
     }
 }

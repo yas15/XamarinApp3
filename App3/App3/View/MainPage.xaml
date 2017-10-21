@@ -2,12 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App3"
+             xmlns:converters="clr-namespace:App3.Converter"
              x:Class="App3.View.MainPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DoubleToIntConverter x:Key ="doubleToIntConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout Padding="20">
 
         <!--In the code behind, we have set the BindingContext Property of the view MainPage to a new instance of the MainPage ViewModel.
-        i.e. we have set the default datasource for all the objects in the MainPage View to the objects in the MainPageViewModel.-->
+        i.e. we have set the default datasource for all the objects in the MainPage View to tshe objects in the MainPageViewModel.-->
         <!--Add a ListView control to the view MainPage -->
         <!--Set the ItemsSource property of the ListView to bind to the object People in the BindingContext i.e. the MainPageViewModel-->
         <!--Add the ItemSelected event to the ListView, let Visual Studio autogenerate the EventHandler 'ListView_ItemSelected' in the code behind-->
@@ -15,23 +21,8 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <ContentView>
-
-                            <StackLayout Padding="20">
-                            
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding FirstName}" FontSize="20" FontAttributes="Bold" />
-                                    <Label Text="{Binding LastName}" FontSize="20" FontAttributes="Bold" />
-                                </StackLayout>
-
-                                <Label Text="{Binding Address}" FontSize="15" />
-
-                            </StackLayout>
-
-                        </ContentView>
-
-                    </ViewCell>
+                    <TextCell Text="{Binding LastName}" 
+                              Detail="{Binding LastName, Converter={StaticResource doubleToIntConverter}}"/>
 
                 </DataTemplate>
 
@@ -39,9 +30,7 @@
 
         </ListView>
 
-        <!--add a button element, and to this element add the event Clicked
-            Let visual studio autogenerate the event in the code behind-->
-        <Button Text="Go to Page 1" Clicked="Button_Clicked" />
+
     </StackLayout>
 
 </ContentPage>

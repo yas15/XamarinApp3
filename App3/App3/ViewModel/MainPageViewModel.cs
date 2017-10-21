@@ -1,6 +1,7 @@
 ﻿using System;
 using App3.Model;
 using System.Collections.ObjectModel;
+using static System.Math;
 
 namespace App3.ViewModel
 {
@@ -19,17 +20,18 @@ namespace App3.ViewModel
 
         public MainPageViewModel()
         {
-            for (int i = 1; i < 6; i++)
+            Random rand = new Random();
+
+            for (int i = 1; i < 8; i++)
             {
                 Person person = new Person();
 
                 person.FirstName = "Cristiano ";
                 person.LastName = "Ronaldo" + i.ToString();
-                person.Address = i.ToString() + " Real Madrid";
-                person.ImageSourceProperty = "man" + i.ToString() + ".jpeg";
-
+                person.Age = (decimal)(35 + rand.NextDouble());
                 People.Add(person);
             }
+
         }
 
     }
